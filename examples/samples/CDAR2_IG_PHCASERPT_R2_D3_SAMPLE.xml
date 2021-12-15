@@ -642,7 +642,7 @@
                                 <tr ID="id_6c844c75-aa34-411c-b7bd-5e4a9f206e29_ref">
                                     <td>Azithromycin 500 MG Oral Tablet</td>
                                     <td>1 g</td>
-                                    <td>NOV 7, 2020 11:60</td>
+                                    <td>NOV 7, 2020 11:59</td>
                                     <td>ORAL</td>
                                 </tr>
                             </tbody>
@@ -656,7 +656,7 @@
                             <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09" />
                             <id root="6c844c75-aa34-411c-b7bd-5e4a9f206e29" />
                             <statusCode code="completed" />
-                            <effectiveTime xsi:type="PIVL_TS" operator="A" value="202011071160-0700" />
+                            <effectiveTime xsi:type="PIVL_TS" operator="A" value="202011071159-0700" />
                             <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" />
                             <doseQuantity value="1" unit="g" />
                             <consumable>
