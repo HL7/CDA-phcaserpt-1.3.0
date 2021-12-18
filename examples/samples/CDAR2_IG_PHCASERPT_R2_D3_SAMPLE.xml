@@ -1155,7 +1155,7 @@
                             <component>
                                 <procedure classCode="PROC" moodCode="EVN">
                                     <!-- [C-CDA] Specimen Collection Procedure (ID) -->
-                                    <templateId root="2.16.840.1.113883.10.20.22.4.315" extension="2020-09-01" />
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.415" extension="2018-09-01" />
                                     <code code="17636008" displayName="Specimen collection (procedure)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                                     <!-- Specimen collection date/time -->
                                     <effectiveTime>
