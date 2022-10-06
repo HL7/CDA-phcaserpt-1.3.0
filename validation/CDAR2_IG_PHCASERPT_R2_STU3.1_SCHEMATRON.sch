@@ -27,6 +27,8 @@ Schematron originally generated from Trifolia on 6/15/2022
 2022-04 Update p-validate_one_trigger_presence and p_validate_trigger_presence to include medication trigger code template
 
 2022-05 Update IG-level Schematron rules to include all trigger code templates where needed
+
+2022-10 Comment out the C-CDA Medication Activity/effectiveTime constraint that doesn't allow nullFlavor (a-1098-7508-c) (export script updated)
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -806,7 +808,8 @@ Schematron originally generated from Trifolia on 6/15/2022
       <sch:assert id="a-1098-7499" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09'])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-7499) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.16" (CONF:1098-10504). SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32498).</sch:assert>
       <sch:assert id="a-1098-7500" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1098-7500).</sch:assert>
       <sch:assert id="a-1098-7507" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1098-7507).</sch:assert>
-      <sch:assert id="a-1098-7508-c" test="count(cda:effectiveTime[(cda:low or @value) and not(cda:low and @value)])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it</sch:assert>
+      <!-- Commented out for eICR to allow nullFlavor in MedicationActivity/effectiveDate -->
+      <!-- <sch:assert id="a-1098-7508-c" test="count(cda:effectiveTime[(cda:low or @value) and not(cda:low and @value)])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it</sch:assert> -->
       <sch:assert id="a-1098-28499-c" test="count(cda:effectiveTime[@operator='A'])=0 or count(cda:effectiveTime[@operator='A' and (@xsi:type='PIVL_TS' or @xsi:type='EIVL_TS')])=1">**SHALL** contain exactly one [1..1] @xsi:type="PIVL_TS" or "EIVL_TS" (CONF:1098-28499).</sch:assert>
       <sch:assert id="a-1098-7516" test="count(cda:doseQuantity)=1">SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).</sch:assert>
       <sch:assert id="a-1098-7525" test="not(cda:rateQuantity) or cda:rateQuantity[@unit]">The rateQuantity, if present, SHALL contain exactly one [1..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7525).</sch:assert>
