@@ -456,7 +456,7 @@ Schematron originally generated from Trifolia on 6/15/2022
     <sch:rule role="error" id="r-validate_code_codesystem_CD_CE-errors-abstract" abstract="true">
       <sch:assert id="a-validate_code_codesystem_CD_CE-c" test="(parent::cda:regionOfInterest) or ((@code and @codeSystem) or not(@code))"> Data types of CD or CE SHALL NOT have @code without @codeSystem (Rule: validate_code_codesystem_CD_CE)</sch:assert>
     </sch:rule>
-    <sch:rule role="error" id="r-errors-validate_code_codesystem_CD_CE" context="//cda:code|cda:value[@xsi:type='CD']|cda:value[@xsi:type='CE']|cda:administrationUnitCode|cda:administrativeGenderCode|cda:awarenessCode|cda:confidentialityCode|cda:dischargeDispositionCode|cda:ethnicGroupCode|cda:functionCode|cda:interpretationCode|cda:maritalStatusCode|cda:methodCode|cda:modeCode|cda:priorityCode|cda:proficiencyLevelCode|cda:RaceCode|cda:religiousAffiliationCode|cda:routeCode|cda:standardIndustryClassCode">
+    <sch:rule role="error" id="r-errors-validate_code_codesystem_CD_CE" context="//cda:code|cda:value[@xsi:type='CD']|cda:value[@xsi:type='CE']|cda:administrationUnitCode|cda:administrativeGenderCode|cda:awarenessCode|cda:confidentialityCode|cda:dischargeDispositionCode|cda:ethnicGroupCode|cda:functionCode|cda:interpretationCode|cda:maritalStatusCode|cda:methodCode|cda:modeCode|cda:priorityCode|cda:proficiencyLevelCode|cda:raceCode|cda:religiousAffiliationCode|cda:routeCode|cda:standardIndustryClassCode">
       <sch:extends rule="r-validate_code_codesystem_CD_CE-errors-abstract" />
     </sch:rule>
   </sch:pattern>
