@@ -56,6 +56,7 @@
   Revision History: 2021-10-19 Sarah Gaunt    - Added preferred language display
   Revision History: 2021-10-20 Sarah Gaunt    - Added processing for patient addr useable period
   Revision History: 2021-12-02 Sarah Gaunt    - Remove legacy SVN version and author information after migration from HL7 GForge SVN to HL7 Github 
+  Revision History: 2023-05-18 Sarah Gaunt    - Update to not display SSN if it is present
 
   This style sheet is based on a major revision of the original CDA XSL, which was made possible thanks to the contributions of:
   - Jingdong Li
