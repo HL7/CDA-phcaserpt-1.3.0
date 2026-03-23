@@ -34,7 +34,9 @@ Schematron originally generated from Trifolia on 6/15/2022
 
 2024-12 Fix immunization trigger checking (substanceAdministration to manufacturedProduct)
 
-2025-09 Manaully update a-4527-1049-c, a-4527-1051-c, a-4527-1052-c, a-4527-1052-c to only validate location participants (was checking others). Need to update in Trifolia, but tool is currently down
+2025-09 Manaully update a-4527-1049-c, a-4527-1051-c, a-4527-1052-c, a-4527-1053-c to only validate location participants (was checking others). Updated in Trifolia
+
+2026-03 Update 3368-1 to 3368-1-c (custom Schematron in Trifolia) to allow the Pregnancy Section to have a nullFlavor of NI otherwise it SHALL have the Pregnancy Observation
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -2425,7 +2427,7 @@ Schematron originally generated from Trifolia on 6/15/2022
   </sch:pattern>
   <sch:pattern id="p-urn-hl7ii-2.16.840.1.113883.10.20.22.2.80-2018-04-01-errors">
     <sch:rule role="error" id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.2.80-2018-04-01-errors-abstract" abstract="true">
-      <sch:assert id="a-3368-1" test="count(cda:entry[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.293' and @extension='2018-04-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:3368-1) such that it SHALL contain exactly one [1..1] Pregnancy Observation (SUPPLEMENTAL PREGNANCY) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.293:2018-04-01) (CONF:3368-26530).</sch:assert>
+      <sch:assert id="a-3368-1-c" test="((count(@nullFlavor)=1) or (count(cda:entry[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.293']])=1]) &gt; 0)) and  (not((count(@nullFlavor)=1) and  (count(cda:entry) &gt; 0)))">SHALL contain at least one [1..*] entry (CONF:3368-1) such that it SHALL contain exactly one [1..1] Pregnancy Observation (SUPPLEMENTAL PREGNANCY) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.293:2018-04-01) (CONF:3368-26530).</sch:assert>
       <sch:assert id="a-3368-3" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.2.80'][@extension='2018-04-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3368-3) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.2.80" (CONF:3368-9). SHALL contain exactly one [1..1] @extension="2018-04-01" (CONF:3368-10).</sch:assert>
       <sch:assert id="a-3368-4" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3368-4).</sch:assert>
       <sch:assert id="a-3368-11" test="cda:code[@code='90767-5']">This code SHALL contain exactly one [1..1] @code="90767-5" Pregnancy summary Document (CONF:3368-11).</sch:assert>
