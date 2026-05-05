@@ -37,6 +37,9 @@ Schematron originally generated from Trifolia on 6/15/2022
 2025-09 Manaully update a-4527-1049-c, a-4527-1051-c, a-4527-1052-c, a-4527-1053-c to only validate location participants (was checking others). Updated in Trifolia
 
 2026-03 Update 3368-1 to 3368-1-c (custom Schematron in Trifolia) to allow the Pregnancy Section to have a nullFlavor of NI otherwise it SHALL have the Pregnancy Observation
+
+2026-05 Update to require that ClinicalDocument/id/root is either a UUID or a OID (p-validate_id_root_format)
+
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -58,6 +61,7 @@ Schematron originally generated from Trifolia on 6/15/2022
 		<sch:active pattern="p-validate_patient_id" />
 </sch:phase>
 <sch:phase id="errors">
+    <sch:active pattern="p-validate_id_root_format" />
     <sch:active pattern="p-validate_CD_CE" />
     <sch:active pattern="p-validate_code_codesystem_CD_CE" />
     <sch:active pattern="p-urn-oid-2.16.840.1.113883.10.20.15.3.1-errors" />
@@ -439,6 +443,12 @@ Schematron originally generated from Trifolia on 6/15/2022
     </sch:rule>
     <sch:rule role="error" id="r-severe-errors-validate_document-level-templateId" context="/">
       <sch:extends rule="r-validate_document-level-templateId-fatal-abstract" />
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_id_root_format">
+    <sch:rule role="error" id="r-validate_id_format-errors-abstract" context="/cda:ClinicalDocument/cda:id">
+      <sch:assert test="matches(@root, '^[0-2](\.(0|[1-9][0-9]*))+$')
+        or matches(@root, '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')">Error (eICR id/root is not an OID or UUID): ClinicalDocument/id/@root SHALL be either a valid ISO OID (e.g., 2.16.840.1.113883.19) or a UUID (e.g., 550e8400-e29b-41d4-a716-446655440000). Rule: (validate_id_root_format)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_CD_CE">
