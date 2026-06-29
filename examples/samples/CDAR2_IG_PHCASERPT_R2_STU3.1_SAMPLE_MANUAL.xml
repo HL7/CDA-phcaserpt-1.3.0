@@ -742,7 +742,7 @@
                   <templateId root="2.16.840.1.113883.10.20.22.4.2" />
                   <!-- [C-CDA R2.1] Result Observation (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                  <id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234g" />
+                  <id root="7c0704bb-9c40-41b5-9c7d-26b2d59e2341" />
                   <code code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lymphocytes [#/​volume] in Blood by Automated count" />
                   <statusCode code="completed" />
                   <effectiveTime value="20201107" />

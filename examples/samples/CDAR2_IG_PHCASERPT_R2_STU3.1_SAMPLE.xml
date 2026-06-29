@@ -1156,7 +1156,7 @@
                   <templateId root="2.16.840.1.113883.10.20.22.4.2" />
                   <!-- [C-CDA R2.1] Result Observation (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                  <id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234g" />
+                  <id root="7c0704bb-9c40-41b5-9c7d-26b2d59e2341" />
                   <code code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lymphocytes [#/​volume] in Blood by Automated count" />
                   <statusCode code="completed" />
                   <effectiveTime value="20201107" />
@@ -2084,7 +2084,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <!-- [eICR R2 STU3] Country of Residence Observation -->
               <templateId root="2.16.840.1.113883.10.20.15.2.3.53" extension="2021-01-01" />
-              <id root="3adc7f4d-ff0a-4b38-9252-bd65edbe3dfg" />
+              <id root="3adc7f4d-ff0a-4b38-9252-bd65edbe3df2" />
               <code code="77983-5" codeSystem="2.16.840.1.113883.6.1" displayName="Country of usual residence" codeSystemName="LOINC" />
               <statusCode code="completed" />
               <value xsi:type="CD" code="GB" codeSystem="1.0.3166.1.2.2" displayName="United Kingdom of Great Britain and Northern Ireland" codeSystemName="ISO 3166 Part 1 Country Codes, 2nd Edition, Alpha-2"

@@ -38,7 +38,9 @@ Schematron originally generated from Trifolia on 6/15/2022
 
 2026-03 Update 3368-1 to 3368-1-c (custom Schematron in Trifolia) to allow the Pregnancy Section to have a nullFlavor of NI otherwise it SHALL have the Pregnancy Observation
 
-2026-05 Update to require that ClinicalDocument/id/root and ClinicalDocument/custodian/assignedCustodian/representedCustodianOrganization are either UUIDs or OIDs (p-validate_id_root_format)
+2026-05 Update to require that ClinicalDocument/id/root and ClinicalDocument/custodian/assignedCustodian/representedCustodianOrganization are either UUIDs or OIDs (p-validate_id_root_format). Updated in Trifolia
+
+2026-06 Update to require that ALL id/@root are either UUIDs or OIDs (p-validate_id_root_format). Updated in Trifolia
 
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -446,9 +448,9 @@ Schematron originally generated from Trifolia on 6/15/2022
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_id_root_format">
-    <sch:rule role="error" id="r-validate_id_format-errors-abstract" context="/cda:ClinicalDocument/cda:id|cda:ClinicalDocument/cda:custodian/cda:assignedCustodian/cda:representedCustodianOrganization/cda:id">
-      <sch:assert test="matches(@root, '^[0-2](\.(0|[1-9][0-9]*))+$')
-        or matches(@root, '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')">Error (id/@root is not an OID or UUID): id/@root SHALL be either a valid ISO OID (e.g., 2.16.840.1.113883.19) or a UUID (e.g., 550e8400-e29b-41d4-a716-446655440000). Rule: (validate_id_root_format)</sch:assert>
+    <sch:rule role="error" id="r-validate_id_format-errors-abstract" context="//cda:id/@root">
+      <sch:assert test="matches(., '^[0-2](\.(0|[1-9][0-9]*))+$')
+        or matches(., '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')">Error (id/@root is not an OID or UUID): id/@root SHALL be either a valid ISO OID (e.g., 2.16.840.1.113883.19) or a UUID (e.g., 550e8400-e29b-41d4-a716-446655440000). Rule: (validate_id_root_format)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_CD_CE">
