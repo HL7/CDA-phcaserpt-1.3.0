@@ -42,6 +42,8 @@ Schematron originally generated from Trifolia on 6/15/2022
 
 2026-06 Update to require that ALL id/@root are either UUIDs or OIDs (p-validate_id_root_format). Updated in Trifolia
 
+2026-06 Update validate any id with @root='2.16.840.1.113883.4.6' (NPI) SHALL have a non-empty @extension containing the NPI value. Rule: (validate_npi_extension). Updated in Trifolia
+
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -63,6 +65,7 @@ Schematron originally generated from Trifolia on 6/15/2022
 		<sch:active pattern="p-validate_patient_id" />
 </sch:phase>
 <sch:phase id="errors">
+    <sch:active pattern="p-validate_npi_extension" />
     <sch:active pattern="p-validate_id_root_format" />
     <sch:active pattern="p-validate_CD_CE" />
     <sch:active pattern="p-validate_code_codesystem_CD_CE" />
@@ -445,6 +448,11 @@ Schematron originally generated from Trifolia on 6/15/2022
     </sch:rule>
     <sch:rule role="error" id="r-severe-errors-validate_document-level-templateId" context="/">
       <sch:extends rule="r-validate_document-level-templateId-fatal-abstract" />
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_npi_extension">
+    <sch:rule role="error" id="r-validate_npi_extension" context="//cda:id[@root='2.16.840.1.113883.4.6']">
+      <sch:assert test="@extension and string-length(@extension) > 0">An id with @root='2.16.840.1.113883.4.6' (NPI) SHALL have a non-empty @extension containing the NPI value. Rule: (validate_npi_extension)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_id_root_format">
