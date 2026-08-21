@@ -1196,7 +1196,7 @@
                   <!-- [C-CDA ID]  Specimen Participant (ID) -->
                   <participant typeCode="PRD">
                     <!-- [C-CDA ID] Specimen Participant (ID) -->
-                    <templateId root="2.16.840.1.113883.10.20.22.4.310" extension="2020-09-01" />
+                    <templateId root="2.16.840.1.113883.10.20.22.4.410" extension="2018-09-01" />
                     <participantRole classCode="SPEC">
                       <!-- Specimen id -->
                       <id root="44fd0410-6115-4b8e-8ee9-a51b3817df66" />
@@ -1408,7 +1408,7 @@
               <effectiveTime value="20201115" />
             </procedure>
           </entry>
-          <!-- Trigger Template: Transmission based precautions: Airborn precautions (procedure) -->
+          <!-- Trigger Template: Transmission based precautions: Airborne precautions (procedure) -->
           <!-- This is an example code: at the time of publication, no RCTC value set exists for procedures -->
           <entry>
             <act classCode="ACT" moodCode="EVN">
@@ -1417,7 +1417,7 @@
               <!-- [eICR R2 STU3] Initial Case Report Trigger Code Procedure Activity Act -->
               <templateId root="2.16.840.1.113883.10.20.15.2.3.45" extension="2021-01-01" />
               <id root="941aee94-1f69-4fa8-91c8-7eee00915728" />
-              <code code="409524006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Airborn precautions (procedure)" sdtc:valueSet="2.16.840.1.114222.4.11.7508"
+              <code code="409524006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Airborne precautions (procedure)" sdtc:valueSet="2.16.840.1.114222.4.11.7508"
                 sdtc:valueSetVersion="2020-11-13" />
               <statusCode code="completed" />
               <effectiveTime value="20201115" />
